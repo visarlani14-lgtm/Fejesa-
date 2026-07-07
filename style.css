@@ -1,0 +1,762 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fffaf7;
+    color: #4b3a32;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+/* Flowers floating */
+
+.flowers {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    font-size: 35px;
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(20px);}
+    100% {transform: translateY(0);}
+}
+
+
+/* Header */
+
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background:
+    linear-gradient(
+    rgba(255,250,247,.8),
+    rgba(255,250,247,.9)
+    );
+}
+
+
+header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 80px;
+    color: #b08d57;
+    animation: fade 2s;
+}
+
+
+header h2 {
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+
+header p {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+
+
+@keyframes fade {
+    from {
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+
+/* Countdown */
+
+.countdown {
+    padding: 80px 20px;
+}
+
+
+.timer {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+
+.timer div {
+
+    background:white;
+    padding:25px;
+    width:130px;
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
+
+}
+
+
+.timer span {
+
+    font-size:45px;
+    color:#b08d57;
+
+}
+
+
+
+/* Story */
+
+.story {
+
+    padding:80px 20px;
+    max-width:900px;
+    margin:auto;
+
+}
+
+
+.story h2 {
+
+    font-size:40px;
+    color:#b08d57;
+
+}
+
+
+.story p {
+
+    font-size:20px;
+    line-height:2;
+    margin-top:30px;
+
+}
+
+
+
+/* Gallery */
+
+.gallery {
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    padding:50px;
+
+}
+
+
+.gallery img {
+
+    width:300px;
+    height:400px;
+    object-fit:cover;
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.2);
+
+    transition:.5s;
+
+}
+
+
+.gallery img:hover {
+
+    transform:scale(1.05);
+
+}
+
+
+
+footer {
+
+    padding:50px;
+    font-size:25px;
+    color:#b08d57;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+header h1{
+font-size:55px;
+}
+
+.timer div{
+width:100px;
+}
+
+.gallery img{
+width:90%;
+}
+
+}.petal {
+    position: fixed;
+    top: -50px;
+    font-size: 25px;
+    z-index: 10;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+
+}
+
+.opening {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #fffaf7;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+
+    animation: openingFade 4s forwards;
+}
+
+
+.opening h1 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 80px;
+
+    color: #b08d57;
+
+    animation: nameAppear 3s;
+
+}
+
+
+.opening p {
+
+    font-size: 22px;
+
+    margin-top: 20px;
+
+    animation: nameAppear 4s;
+
+}
+
+
+
+@keyframes openingFade {
+
+    0% {
+        opacity:1;
+    }
+
+    80% {
+        opacity:1;
+    }
+
+    100% {
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+
+
+@keyframes nameAppear {
+
+    from {
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.gallery img {
+
+    opacity: 0;
+
+    animation: photoShow 2s forwards;
+
+}
+
+
+.gallery img:nth-child(1){
+
+    animation-delay: 0.5s;
+
+}
+
+
+.gallery img:nth-child(2){
+
+    animation-delay: 1s;
+
+}
+
+
+.gallery img:nth-child(3){
+
+    animation-delay: 1.5s;
+
+}
+
+
+
+@keyframes photoShow {
+
+    from {
+
+        opacity:0;
+
+        transform: translateY(50px) scale(0.9);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform: translateY(0) scale(1);
+
+    }
+
+}
+
+.curtain-left,
+.curtain-right {
+
+    position: fixed;
+
+    top:0;
+
+    width:50%;
+    height:100vh;
+
+    background:#fffaf7;
+
+    z-index:200;
+
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+
+}
+
+
+.curtain-left {
+
+    left:0;
+
+    animation-name:openLeft;
+
+}
+
+
+.curtain-right {
+
+    right:0;
+
+    animation-name:openRight;
+
+}
+
+
+
+@keyframes openLeft {
+
+    from {
+        transform:translateX(0);
+    }
+
+    to {
+        transform:translateX(-100%);
+    }
+
+}
+
+
+
+@keyframes openRight {
+
+    from {
+        transform:translateX(0);
+    }
+
+    to {
+        transform:translateX(100%);
+    }
+
+}
+.white-curtain {
+
+    position: fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#ffffff;
+
+    z-index:9999;
+
+    animation: curtainOpen 4s forwards;
+
+}
+
+
+@keyframes curtainOpen {
+
+    0% {
+        opacity:1;
+        transform:scaleY(1);
+    }
+
+
+    70% {
+        opacity:1;
+    }
+
+
+    100% {
+        opacity:0;
+        transform:scaleY(0);
+        visibility:hidden;
+    }
+
+}
+/* More compact luxury design */
+
+header {
+    min-height: 75vh;
+    padding: 30px 20px;
+}
+
+
+header h1 {
+    font-size: 65px;
+}
+
+
+header h2 {
+    font-size: 30px;
+}
+
+
+.countdown {
+    padding: 40px 20px;
+}
+
+
+.timer {
+    margin-top: 25px;
+}
+
+
+.story {
+    padding: 45px 20px;
+}
+
+
+.story h2 {
+    margin-bottom: 20px;
+}
+
+
+.gallery {
+    padding: 35px 20px;
+}
+
+
+.details {
+    padding: 50px 20px;
+    margin: 30px auto;
+}
+
+
+.details h2 {
+    font-size: 40px;
+    color:#b08d57;
+}
+
+
+.details p {
+    font-size:22px;
+    margin:15px;
+}
+
+.decor {
+
+    font-size:35px;
+
+    margin:30px;
+
+    animation: glow 2s infinite alternate;
+
+}
+
+
+@keyframes glow {
+
+    from {
+        opacity:.5;
+    }
+
+    to {
+        opacity:1;
+    }
+
+}
+
+/* HERO SECTION */
+
+.hero {
+
+height:100vh;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+
+.hero-photo {
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+filter:brightness(70%);
+
+}
+
+
+.hero-overlay {
+
+position:relative;
+
+z-index:2;
+
+color:white;
+
+text-align:center;
+
+}
+
+
+.hero-overlay h1 {
+
+font-family:'Great Vibes', cursive;
+
+font-size:90px;
+
+color:#e6c47a;
+
+text-shadow:0 0 25px #b08d57;
+
+}
+
+
+.hero-overlay h2 {
+
+font-size:35px;
+
+}
+
+
+.hero-overlay p {
+
+font-size:25px;
+
+}
+
+
+.quote {
+
+margin-top:30px;
+
+font-style:italic;
+
+}
+
+/* Mobile Hero Fix */
+
+.hero {
+    height: 65vh;
+    min-height: 500px;
+}
+
+
+.hero-overlay h1 {
+    font-size: 45px;
+}
+
+
+.hero-overlay h2 {
+    font-size: 20px;
+}
+
+
+.hero-overlay p {
+    font-size: 16px;
+}
+
+
+.quote {
+    margin-top: 20px;
+    padding: 0 25px;
+    font-size: 16px !important;
+}
+
+/* PHONE HERO SIZE FIX */
+
+.hero {
+    height: 55vh;
+    min-height: 400px;
+    max-height: 500px;
+}
+
+
+.hero-photo {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.hero-overlay h1 {
+    font-size: 38px;
+}
+
+
+.hero-overlay h2 {
+    font-size: 18px;
+}
+
+
+.hero-overlay p {
+    font-size: 15px;
+}
+
+
+.quote {
+    font-size: 14px !important;
+    margin-top: 15px;
+}
+
+/* Luxury Golden Sparkles */
+
+.sparkle {
+
+    position:fixed;
+
+    width:6px;
+    height:6px;
+
+    background:#e6c47a;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #e6c47a,
+    0 0 20px #e6c47a;
+
+    animation:sparkleMove 5s linear infinite;
+
+    z-index:50;
+
+}
+
+
+@keyframes sparkleMove {
+
+    0% {
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        transform:translateY(-20vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* Gold glow */
+
+.hero-overlay h1,
+.story h2,
+.details h2 {
+
+    text-shadow:
+    0 0 10px #e6c47a,
+    0 0 20px #b08d57;
+
+}
+
